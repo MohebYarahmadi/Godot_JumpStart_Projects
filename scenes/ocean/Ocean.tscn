@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnn5l8xe2ecuk"]
+
+[ext_resource type="Texture2D" uid="uid://dkdbpc1yyf8t0" path="res://assets/Plane.png" id="1_npita"]
+[ext_resource type="Texture2D" uid="uid://cnux5q72k1xpt" path="res://assets/Helicopter.png" id="2_i4j2t"]
+
+[node name="ocean" type="Node"]
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_npita")
+
+[node name="helicopter" type="Sprite2D" parent="."]
+position = Vector2(771, 266)
+texture = ExtResource("2_i4j2t")

@@ -20,7 +20,13 @@ func _process(delta: float) -> void:
 	if plane.scale.x < 0.7:
 		plane.scale.x += 0.1 * delta
 		plane.scale.y += 0.1 * delta
-	helicopter.position.x += 20.0 * delta	# it's a child node
-	helicopter.position.y -= 10.0 * delta	# it's a child node
-	carrier.position.x -= 10.0 * delta
-	carrier.position.y += 10.0 * delta
+	helicopter.position.x += 50.0 / helicopter.global_scale.x * delta	# it's a child node
+	#carrier.position.x -= 10.0 * delta
+	#carrier.position.y += 10.0 * delta
+	
+	#print("helicopter.position: ", helicopter.position)
+	#print("helicopter.global_position: ", helicopter.global_position)
+	#print("helicopter.scale: ", helicopter.scale)
+	#print("helicopter.blobal_scale: ", helicopter.global_scale)
+	#
+	#pass

@@ -30,8 +30,9 @@ naming/script_name_casing=4
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
 "res://assets/": "blue",
-"res://scenes/": "purple"
+"res://scenes/": "red"
 }
 
 [rendering]

@@ -16,12 +16,13 @@ metadata/_edit_lock_ = true
 
 [node name="carrier" type="Sprite2D" parent="."]
 position = Vector2(968, 260)
-scale = Vector2(0.5, 0.5)
+rotation = 0.5235988
 texture = ExtResource("3_2ucyk")
 
 [node name="helicopter" type="Sprite2D" parent="carrier"]
 unique_name_in_owner = true
-position = Vector2(-1712, -100)
+position = Vector2(-763.14087, 318.20135)
+rotation = 1.2217305
 texture = ExtResource("2_i4j2t")
 
 [node name="plane" type="Sprite2D" parent="."]

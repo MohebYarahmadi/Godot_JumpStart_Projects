@@ -8,6 +8,10 @@ extends Node2D
 # ...now it doesn't matter the hierarchy of helicopter.
 @onready var helicopter: Sprite2D = %helicopter
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("SetTarget"):
+		plane.look_at(get_global_mouse_position());
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,9 +23,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	plane.position.x += 50.0 * delta
-	if plane.scale.x < 0.7:
-		plane.scale.x += 0.1 * delta
-		plane.scale.y += 0.1 * delta
+	#if plane.scale.x < 0.7:
+		#plane.scale.x += 0.1 * delta
+		#plane.scale.y += 0.1 * delta
 		
 	#helicopter.position.x += 50.0 / helicopter.global_scale.x * delta	# it's a child node and scaled
 	#helicopter.position.x += 30.0 * delta	# it's a child node

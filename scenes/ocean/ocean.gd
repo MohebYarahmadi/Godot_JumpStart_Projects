@@ -24,7 +24,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# plane will move toward mouse position
-	plane.position = plane.position.move_toward(_target, 50.0 * delta)
+	#plane.position = plane.position.move_toward(_target, 50.0 * delta)
+	#plane.position += plane.transform.x.normalized() * 50.0 * delta	# plane is scaled so normalized
+	plane.move_local_x(50.0 * delta, false)	# not calculate scale. a shorter way
 	
 	carrier.position.x -= 10.0 * delta
 	carrier.position.y += 10.0 * delta

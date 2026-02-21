@@ -12,7 +12,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#plane.rotation = helicopter.global_rotation
-	helicopter.global_rotation = plane.rotation
+	#helicopter.global_rotation = plane.rotation
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,9 +22,16 @@ func _process(delta: float) -> void:
 	if plane.scale.x < 0.7:
 		plane.scale.x += 0.1 * delta
 		plane.scale.y += 0.1 * delta
-	helicopter.position.x += 50.0 / helicopter.global_scale.x * delta	# it's a child node
+		
+	#helicopter.position.x += 50.0 / helicopter.global_scale.x * delta	# it's a child node and scaled
+	#helicopter.position.x += 30.0 * delta	# it's a child node
+	#helicopter.position.y += 50.0 * delta	# it's a child node
+	helicopter.translate(Vector2(30.0, 50.0) * delta); # the same effect
+	#helicopter.global_translate(Vector2(30.0, 50.0) * delta); # the same effect if scaled
+	
 	carrier.position.x -= 10.0 * delta
 	carrier.position.y += 10.0 * delta
+	
 	plane.rotation_degrees += 30.0 * delta;
 	
 	#print("helicopter.position: ", helicopter.position)

@@ -8,6 +8,8 @@ extends Node2D
 # ...now it doesn't matter the hierarchy of helicopter.
 @onready var helicopter: Sprite2D = %helicopter
 
+const ROT_SPEED: float = PI / 6
+
 var _target: Vector2 = Vector2.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -23,11 +25,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# plane will move toward mouse position
-	#plane.position = plane.position.move_toward(_target, 50.0 * delta)
-	#plane.position += plane.transform.x.normalized() * 50.0 * delta	# plane is scaled so normalized
-	plane.move_local_x(50.0 * delta, false)	# not calculate scale. a shorter way
-	
-	carrier.position.x -= 10.0 * delta
-	carrier.position.y += 10.0 * delta
+	if Input.is_action_pressed("FlyForward"):
+		plane.move_local_x(50.0 * delta, false)	# not calculate scale. a shorter way
+	if Input.is_action_pressed("ui_down"):
+		plane.move_local_x(-30.0 * delta)
+	if Input.is_action_pressed("ui_right"):
+		plane.rotate(ROT_SPEED * delta)
+	if Input.is_action_pressed("ui_left"):
+		plane.rotate(-ROT_SPEED * delta)
 	

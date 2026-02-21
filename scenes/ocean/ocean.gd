@@ -8,42 +8,24 @@ extends Node2D
 # ...now it doesn't matter the hierarchy of helicopter.
 @onready var helicopter: Sprite2D = %helicopter
 
+var _target: Vector2 = Vector2.ZERO
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("SetTarget"):
-		plane.look_at(get_global_mouse_position());
+		_target = get_local_mouse_position();
+		plane.look_at(_target);
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#plane.rotation = helicopter.global_rotation
-	#helicopter.global_rotation = plane.rotation
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	plane.position.x += 50.0 * delta
-	#if plane.scale.x < 0.7:
-		#plane.scale.x += 0.1 * delta
-		#plane.scale.y += 0.1 * delta
-		
-	#helicopter.position.x += 50.0 / helicopter.global_scale.x * delta	# it's a child node and scaled
-	#helicopter.position.x += 30.0 * delta	# it's a child node
-	#helicopter.position.y += 50.0 * delta	# it's a child node
-	helicopter.translate(Vector2(30.0, 50.0) * delta); # the same effect
-	#helicopter.global_translate(Vector2(30.0, 50.0) * delta); # the same effect if scaled
+	# plane will move toward mouse position
+	plane.position = plane.position.move_toward(_target, 50.0 * delta)
 	
 	carrier.position.x -= 10.0 * delta
 	carrier.position.y += 10.0 * delta
 	
-	plane.rotation_degrees += 30.0 * delta;
-	
-	#print("helicopter.position: ", helicopter.position)
-	#print("helicopter.global_position: ", helicopter.global_position)
-	#print("helicopter.scale: ", helicopter.scale)
-	#print("helicopter.blobal_scale: ", helicopter.global_scale)
-	#print("helicopter.rotation: ", helicopter.rotation_degrees)
-	#print("helicopter.blobal_rotation: ", helicopter.global_rotation_degrees)
-	#print("helicopter.rotation: ", rad_to_deg(helicopter.rotation))
-	#print("helicopter.blobal_rotation: ", rad_to_deg(helicopter.global_rotation))
-	#pass

@@ -54,4 +54,74 @@ func _run() -> void:
 	
 	
 	#========== Dictionary
+	var level_items: Dictionary [int, String] = {
+		1: "Wooden Sword",
+		2: "Iron Sword",
+		3: "Steel Sword",
+		4: "Elven Blade",
+		5: "Dwarven Axe",
+		6: "Mithril Armor",
+		7: "Anduril, Flame of the West",
+		8: "Bow of Galadriel",
+		9: "Ring of Power",
+		10: "The One Ring (corrupts the user!)"
+	}
+	
+	var level_item_ex: String = level_items[3]
+	print("Level 3 item: ", level_item_ex)
+	
+	for level in level_items:
+		print(level, " ", level_items[level])
+		
+	for level_item in level_items.values():
+		print(level_item)
+	
+	var sorted_keys: Array = level_items.keys()
+	sorted_keys.sort()
+	for sorted_key in sorted_keys:
+		print(sorted_key, " ", level_items[sorted_key])
+	
+	level_items[4] = "Elven Bow"
+	print(level_items)
+	
+	level_items[11] = "Mithril Shield"	# Add item
+	print(level_items)
+	
+	level_items.erase(11)	# Remove item
+	print(level_items)
+	
+	if level_items.has(4):
+		print("Level item has 4")
+	if !level_items.has(11):
+		print("There is no item 11")
+	
+	
+	var fellowship_dict: Dictionary[String, Dictionary] = {
+		"Frodo": {"race": "Hobbit", "weapon": "Sting"},
+		"Sam": {"race": "Hobbit", "weapon": "Cooking Pan"},
+		"Gandalf": {"race": "Wizard", "weapon": "Glamdring"},
+		"Aragorn": {"race": "Human", "weapon": "Andúril"},
+		"Legolas": {"race": "Elf", "weapon": "Bow and Daggers"},
+		"Gimli": {"race": "Dwarf", "weapon": "Battle Axe"},
+		"Boromir": {"race": "Human", "weapon": "Shield and Sword"},
+		"Merry": {"race": "Hobbit", "weapon": "Dagger"},
+		"Pippin": {"race": "Hobbit", "weapon": "Dagger"}
+	}
+	
+	var hero_weapon: String = fellowship_dict["Aragorn"]["weapon"]
+	print(hero_weapon)
+	var another_hero_weapon: String = fellowship_dict.Gandalf.weapon
+	print(another_hero_weapon)
+	
+	for fellow in fellowship_dict.values():
+		print(fellow.race)
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		

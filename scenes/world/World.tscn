@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmj7uegu1p3j"]
+
+[ext_resource type="Texture2D" uid="uid://dfxuibxy31367" path="res://assets/Hobbit.png" id="1_5qbjp"]
+
+[node name="World" type="Node2D"]
+
+[node name="sprite2d" type="Sprite2D" parent="."]
+texture = ExtResource("1_5qbjp")

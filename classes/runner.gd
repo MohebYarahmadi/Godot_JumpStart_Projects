@@ -5,11 +5,9 @@ extends EditorScript
 # Called when the script is executed (using File -> Run in Script Editor).
 func _run() -> void:
 	var aragorn: Character = Character.new("Aragorn", 100, "Bow")
-	var frodo: Character = Character.new("Frodo", 80, "Sword")
-	
+
+	print(aragorn.m_health)
 	aragorn.print_info()
-	aragorn.set_health(150)
+	aragorn.m_health = 1000
 	aragorn.print_info()
-	print(aragorn.get_health())
-	
-	frodo.print_info()
+	print(aragorn.health_str)

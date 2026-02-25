@@ -16,6 +16,11 @@ func _run() -> void:
 		print("Hello 3")
 	print("Hello 2")
 	
+	# ternary operator
+	var next_state: String
+	next_state = "idle" if ring_bearer=="Mike" else "fall"
+	print(next_state)
+	
 	var arrows: int = 10
 	while arrows > 0:
 		arrows -= 1

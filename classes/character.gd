@@ -2,17 +2,25 @@ extends Object
 
 class_name Character
 
-# m_ stands for Memeber Attributes
-var m_health: int
-var m_name: String
-var m_weapon: String
+# _ stands for Memeber Attributes, private by convention
+var _health: int
+var _name: String
+var _weapon: String
 
 func _init(name: String, health: int, weapon: String) -> void:
-	m_name = name
-	m_health = health
-	m_weapon = weapon
+	_name = name
+	_health = health
+	_weapon = weapon
 
 func print_info() -> void:
 	print("%s health:%d wields:%s" % [
-		m_name, m_health, m_weapon
+		_name, _health, _weapon
 	])
+
+func set_health(new_health: int) -> void:
+	if new_health > 100: _health = 100
+	elif new_health < 0: _health = 0
+	else: _health = new_health
+	
+func get_health() -> int:
+	return _health

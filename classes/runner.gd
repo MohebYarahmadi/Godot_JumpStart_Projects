@@ -8,9 +8,8 @@ func _run() -> void:
 	var frodo: Character = Character.new("Frodo", 80, "Sword")
 	
 	aragorn.print_info()
-	aragorn.m_health -= 30
+	aragorn.set_health(150)
 	aragorn.print_info()
+	print(aragorn.get_health())
 	
-	frodo.print_info()
-	frodo.m_weapon = "Slinger"
 	frodo.print_info()

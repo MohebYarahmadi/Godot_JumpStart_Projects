@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds0adgp3wbc7j"]
+[gd_scene load_steps=4 format=3 uid="uid://ds0adgp3wbc7j"]
 
 [ext_resource type="Script" uid="uid://dti1m7cbyoff2" path="res://scenes/life/lifecycle.gd" id="1_s8h1a"]
+[ext_resource type="Texture2D" uid="uid://bsa752ok51owb" path="res://assets/Bg.png" id="2_k0b36"]
+[ext_resource type="PackedScene" uid="uid://b5ahv7klbkxi5" path="res://scenes/life/Hobbit.tscn" id="3_apa2f"]
 
 [node name="lifecycle" type="Node2D"]
 script = ExtResource("1_s8h1a")
 
-[node name="test" type="Node2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_k0b36")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="hobbit" parent="." instance=ExtResource("3_apa2f")]
+position = Vector2(142, 478)
+
+[node name="hobbit_2" parent="." instance=ExtResource("3_apa2f")]
+position = Vector2(276, 460)
+
+[node name="hobbit_3" parent="." instance=ExtResource("3_apa2f")]
+position = Vector2(437, 460)
+
+[node name="hobbit_4" parent="." instance=ExtResource("3_apa2f")]
+position = Vector2(559, 460)

@@ -11,3 +11,7 @@ func _run() -> void:
 	aragorn.m_health = 1000
 	aragorn.print_info()
 	print(aragorn.health_str)
+	
+	print(Character.character_count)
+	print(Character.get_cc_label_str())
+	print(Character.SPEED)

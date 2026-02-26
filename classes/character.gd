@@ -2,6 +2,12 @@ extends Object
 
 class_name Character
 
+
+const SPEED: int = 100
+static var character_count: int = 0
+static func get_cc_label_str() -> String:
+	return "We have made %d characters" % character_count
+
 # _ stands for Memeber Attributes, private by convention
 #var _health: int
 var _name: String
@@ -24,6 +30,7 @@ var health_str: String:
 		return "%s health:%d" % [_name, m_health]
 
 func _init(new_name: String, new_health: int, new_weapon: String) -> void:
+	character_count += 1
 	_name = new_name
 	m_health = new_health
 	_weapon = new_weapon

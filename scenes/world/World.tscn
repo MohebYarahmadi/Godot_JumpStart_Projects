@@ -1,8 +1,30 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmj7uegu1p3j"]
 
-[ext_resource type="Texture2D" uid="uid://dfxuibxy31367" path="res://assets/Hobbit.png" id="1_5qbjp"]
+[ext_resource type="Script" uid="uid://dd4fnfl2xko7" path="res://scenes/world/world.gd" id="1_1oml7"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_1oml7")
 
-[node name="sprite2d" type="Sprite2D" parent="."]
-texture = ExtResource("1_5qbjp")
+[node name="A1" type="Node2D" parent="."]
+script = ExtResource("1_1oml7")
+
+[node name="A1B1" type="Node2D" parent="A1"]
+script = ExtResource("1_1oml7")
+
+[node name="A1B2" type="Node2D" parent="A1"]
+script = ExtResource("1_1oml7")
+
+[node name="A1B2C1" type="Node2D" parent="A1/A1B2"]
+script = ExtResource("1_1oml7")
+
+[node name="A2" type="Node2D" parent="."]
+script = ExtResource("1_1oml7")
+
+[node name="A2B1" type="Node2D" parent="A2"]
+script = ExtResource("1_1oml7")
+
+[node name="A2B1C1" type="Node2D" parent="A2/A2B1"]
+script = ExtResource("1_1oml7")
+
+[node name="A3" type="Node2D" parent="."]
+script = ExtResource("1_1oml7")

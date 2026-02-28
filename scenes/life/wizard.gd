@@ -2,6 +2,11 @@ extends Node2D
 
 class_name Wizard
 
+signal cast_spell
+
+@onready var timer: Timer = $timer
+@onready var spell_timer: Timer = $spell_timer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
@@ -12,8 +17,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-
-
-
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	show()
+
+
+func _on_spell_timer_timeout() -> void:
+	print("Spell was cast!")
+	cast_spell.emit()

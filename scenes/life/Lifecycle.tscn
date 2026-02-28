@@ -14,16 +14,10 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="hobbit" parent="." instance=ExtResource("3_apa2f")]
-position = Vector2(142, 478)
-
-[node name="hobbit_2" parent="." instance=ExtResource("3_apa2f")]
-position = Vector2(276, 460)
-
-[node name="hobbit_3" parent="." instance=ExtResource("3_apa2f")]
-position = Vector2(437, 460)
-
-[node name="hobbit_4" parent="." instance=ExtResource("3_apa2f")]
-position = Vector2(559, 460)
+position = Vector2(463, 480)
 
 [node name="wizard" parent="." instance=ExtResource("4_6rne3")]
 position = Vector2(964, 467)
+
+[connection signal="kill_wizard" from="hobbit" to="." method="_on_hobbit_kill_wizard"]
+[connection signal="cast_spell" from="wizard" to="." method="_on_wizard_cast_spell"]

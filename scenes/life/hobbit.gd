@@ -4,6 +4,8 @@ class_name Hobbit
 
 signal kill_wizard
 
+@export var rotation_speed: float = PI
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
 		kill_wizard.emit()
@@ -11,7 +13,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotate(PI * delta)
+	rotate(rotation_speed * delta)
 
 
 func hit_by_spell() -> void:

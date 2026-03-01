@@ -16,6 +16,14 @@ metadata/_edit_lock_ = true
 [node name="hobbit" parent="." instance=ExtResource("3_apa2f")]
 position = Vector2(463, 480)
 
+[node name="hobbit_2" parent="." instance=ExtResource("3_apa2f")]
+position = Vector2(463, 480)
+rotation_speed = 1.2
+
+[node name="hobbit_3" parent="." instance=ExtResource("3_apa2f")]
+position = Vector2(463, 480)
+rotation_speed = 6.3
+
 [node name="wizard" parent="." instance=ExtResource("4_6rne3")]
 position = Vector2(964, 467)
 

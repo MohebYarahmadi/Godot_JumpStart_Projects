@@ -17,6 +17,11 @@ func _process(delta: float) -> void:
 	pass
 
 
+func hit_by_hobbit() -> void:
+	spell_timer.stop()
+	scale = Vector2(0.1, 0.1)
+
+
 func _on_timer_timeout() -> void:
 	show()
 

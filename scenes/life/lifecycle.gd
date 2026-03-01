@@ -9,4 +9,4 @@ func _on_wizard_cast_spell() -> void:
 
 
 func _on_hobbit_kill_wizard() -> void:
-	wizard.hide()
+	wizard.hit_by_hobbit()
